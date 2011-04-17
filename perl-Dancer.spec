@@ -1,5 +1,5 @@
 %define upstream_name    Dancer
-%define upstream_version 1.3020
+%define upstream_version 1.3030
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}

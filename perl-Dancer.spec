@@ -10,11 +10,11 @@ License:    GPL+ or Artistic
 Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module//%{upstream_name}-%{upstream_version}.tar.gz
-
 BuildRequires: perl(Encode)
 BuildRequires: perl(File::Basename)
 BuildRequires: perl(File::Spec)
 BuildRequires: perl(HTTP::Body)
+BuildRequires: perl(HTTP::Server::Simple::CGI)
 BuildRequires: perl(HTTP::Server::Simple::PSGI)
 BuildRequires: perl(LWP)
 BuildRequires: perl(MIME::Types)

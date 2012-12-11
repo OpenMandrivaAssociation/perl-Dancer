@@ -1,28 +1,29 @@
 %define upstream_name    Dancer
 %define upstream_version 1.3040
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	2
 
-Summary:    Template Toolkit wrapper for Dancer
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module//%{upstream_name}-%{upstream_version}.tar.gz
-BuildRequires: perl(Encode)
-BuildRequires: perl(File::Basename)
-BuildRequires: perl(File::Spec)
-BuildRequires: perl(HTTP::Body)
-BuildRequires: perl(HTTP::Server::Simple::CGI)
-BuildRequires: perl(HTTP::Server::Simple::PSGI)
-BuildRequires: perl(LWP)
-BuildRequires: perl(MIME::Types)
-BuildRequires: perl(Test::More)
-BuildRequires: perl(Time::HiRes)
-BuildRequires: perl(URI)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+Summary:	Template Toolkit wrapper for Dancer
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module//%{upstream_name}-%{upstream_version}.tar.gz
+
+BuildRequires:	perl-devel
+BuildRequires:	perl(Encode)
+BuildRequires:	perl(File::Basename)
+BuildRequires:	perl(File::Spec)
+BuildRequires:	perl(HTTP::Body)
+BuildRequires:	perl(HTTP::Server::Simple::CGI)
+BuildRequires:	perl(HTTP::Server::Simple::PSGI)
+BuildRequires:	perl(LWP)
+BuildRequires:	perl(MIME::Types)
+BuildRequires:	perl(Test::More)
+BuildRequires:	perl(Time::HiRes)
+BuildRequires:	perl(URI)
+BuildArch:	noarch
 
 %description
 Dancer is a web application framework designed to be as effortless as
@@ -43,26 +44,48 @@ or cumbersome for your project, Dancer is what you need.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc README CHANGES META.yml LICENSE
 %{_bindir}/dancer
 %{_mandir}/man1/dancer.1*
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
 
+%changelog
+* Mon May 02 2011 Guillaume Rousse <guillomovitch@mandriva.org> 1.304.0-1mdv2011.0
++ Revision: 662493
+- update to new version 1.3040
+
+* Sun Apr 17 2011 Guillaume Rousse <guillomovitch@mandriva.org> 1.303.0-1
++ Revision: 654040
+- update to new version 1.3030
+
+* Wed Mar 23 2011 Guillaume Rousse <guillomovitch@mandriva.org> 1.302.0-1
++ Revision: 648069
+- update to new version 1.3020
+
+* Sat Feb 12 2011 Guillaume Rousse <guillomovitch@mandriva.org> 1.301.0-1
++ Revision: 637366
+- update to new version 1.3010
+
+* Thu Dec 23 2010 Guillaume Rousse <guillomovitch@mandriva.org> 1.200.300-1mdv2011.0
++ Revision: 624079
+- update to new version 1.2003
+
+* Sun Nov 14 2010 Guillaume Rousse <guillomovitch@mandriva.org> 1.190.400-1mdv2011.0
++ Revision: 597575
+- update to new version 1.1904
+
+* Sat Oct 16 2010 Guillaume Rousse <guillomovitch@mandriva.org> 1.190.100-1mdv2011.0
++ Revision: 586104
+- import perl-Dancer
 

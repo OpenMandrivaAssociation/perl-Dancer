@@ -1,9 +1,9 @@
 %define upstream_name    Dancer
-%define upstream_version 1.3040
+%define upstream_version 1.3115
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	2
+Release:	1
 
 Summary:	Template Toolkit wrapper for Dancer
 License:	GPL+ or Artistic
@@ -19,9 +19,11 @@ BuildRequires:	perl(HTTP::Body)
 BuildRequires:	perl(HTTP::Server::Simple::CGI)
 BuildRequires:	perl(HTTP::Server::Simple::PSGI)
 BuildRequires:	perl(LWP)
+BuildRequires:	perl(Module::Runtime)
 BuildRequires:	perl(MIME::Types)
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl(Time::HiRes)
+BuildRequires:	perl(Try::Tiny)
 BuildRequires:	perl(URI)
 BuildArch:	noarch
 

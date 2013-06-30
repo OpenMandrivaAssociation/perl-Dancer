@@ -1,2 +1,4 @@
+removed_sources:
+  Dancer-1.3040.tar.gz: 62510466c0d4b04abbdeddda21b7ffb0aaf6b0f4
 sources:
-  "Dancer-1.3040.tar.gz": 62510466c0d4b04abbdeddda21b7ffb0aaf6b0f4
+  Dancer-1.3115.tar.gz: 4ee6eef84464e29fa4638e1a7ee8c67034f4ffce
